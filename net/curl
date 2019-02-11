@@ -1,0 +1,7 @@
+#!/bin/bash
+source /usr/src/lib/env
+VERSION="7.61.0"
+./configure
+make
+make install
+cp lib/.libs/libcurl.so.4 /usr/lib
