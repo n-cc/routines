@@ -1,0 +1,8 @@
+#!/bin/bash
+source /usr/src/lib/env
+
+VERSION=0.7.1
+URL="netcat.sourceforge.net/download.php"
+./configure
+make
+make install
