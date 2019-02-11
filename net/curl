@@ -1,7 +1,14 @@
 #!/bin/bash
 source /usr/src/lib/env
 VERSION="7.61.0"
-./configure
+
+./configure --prefix="$PREFIX" --disable-static --enable-threaded-resolver --with-ca-path=/etc/ssl/certs
 make
 make install
-cp lib/.libs/libcurl.so.4 /usr/lib
+rm -rf docs/examples/.deps
+find docs \ -name Makefile\* -o -name \*.1 -o -name \*.3 \) -exec rm {} \;
+
+install -v -d -m755 /usr/share/doc/curl-$VERSION
+cp -v -R docs/* /usr/share/doc/curl-$VERSION
+
+# cp lib/.libs/libcurl.so.4 /usr/lib
