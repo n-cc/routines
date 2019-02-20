@@ -1,5 +1,4 @@
 #!/bin/bash
-source /usr/src/lib/env
 VERSION="7.61.0"
 
 ./configure --prefix="$PREFIX" --disable-static --enable-threaded-resolver --with-ca-path=/etc/ssl/certs
